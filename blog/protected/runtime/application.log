@@ -1,0 +1,168 @@
+2012/11/04 22:38:14 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[42000] [1049] Unknown database 'your_database_name'' in /Users/macbook/Sites/YiiRoot/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /Users/macbook/Sites/YiiRoot/framework/db/CDbConnection.php(331): CDbConnection->open()
+#1 /Users/macbook/Sites/YiiRoot/framework/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /Users/macbook/Sites/YiiRoot/framework/base/CModule.php(388): CDbConnection->init()
+#3 /Users/macbook/Sites/YiiRoot/framework/base/CApplication.php(431): CModule->getComponent('db')
+#4 /Users/macbook/Sites/YiiRoot/framework/db/ar/CActiveRecord.php(624): CApplication->getDb()
+#5 /Users/macbook/Sites/YiiRoot/framework/db/ar/CActiveRecord.php(2311): CActiveRecord->getDbConnection()
+#6 /Users/macbook/Sites/YiiRoot/framework/db/ar/CActiveRecord.php(388): CActiveRecordMetaData->__construct(Object(Post))
+#7 /Users/macbook/Sites/YiiRoot/framework/web/CActiveDataProvider.php(75): CActiveRecord::model('Post')
+#8 /Users/macbook/Sites/blog/protected/controllers/PostController.php(132): CActiveDataProvider->__construct('Post', Array)
+#9 /Users/macbook/Sites/YiiRoot/framework/web/actions/CInlineAction.php(50): PostController->actionIndex()
+#10 /Users/macbook/Sites/YiiRoot/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /Users/macbook/Sites/YiiRoot/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 /Users/macbook/Sites/YiiRoot/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#13 /Users/macbook/Sites/YiiRoot/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 /Users/macbook/Sites/YiiRoot/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 /Users/macbook/Sites/YiiRoot/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 /Users/macbook/Sites/YiiRoot/framework/web/CController.php(292): CFilterChain->run()
+#17 /Users/macbook/Sites/YiiRoot/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /Users/macbook/Sites/YiiRoot/framework/web/CWebApplication.php(283): CController->run('')
+#19 /Users/macbook/Sites/YiiRoot/framework/web/CWebApplication.php(142): CWebApplication->runController('')
+#20 /Users/macbook/Sites/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /Users/macbook/Sites/blog/index.php(23): CApplication->run()
+#22 {main}
+REQUEST_URI=/
+---
+2012/11/05 17:53:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gii".' in /Users/macbook/Sites/YiiRoot/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Users/macbook/Sites/YiiRoot/framework/web/CWebApplication.php(142): CWebApplication->runController('gii')
+#1 /Users/macbook/Sites/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Users/macbook/Sites/blog/index.php(23): CApplication->run()
+#3 {main}
+REQUEST_URI=/gii
+---
+2012/11/05 17:54:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gii".' in /Users/macbook/Sites/YiiRoot/framework/web/CWebApplication.php:287
+Stack trace:
+#0 /Users/macbook/Sites/YiiRoot/framework/web/CWebApplication.php(142): CWebApplication->runController('gii')
+#1 /Users/macbook/Sites/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Users/macbook/Sites/blog/index.php(23): CApplication->run()
+#3 {main}
+REQUEST_URI=/gii
+---
+2012/11/05 17:58:59 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /Users/macbook/Sites/YiiRoot/framework/web/auth/CAccessControlFilter.php:170
+Stack trace:
+#0 /Users/macbook/Sites/YiiRoot/framework/web/auth/CAccessControlFilter.php(133): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /Users/macbook/Sites/YiiRoot/framework/web/filters/CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /Users/macbook/Sites/YiiRoot/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 /Users/macbook/Sites/YiiRoot/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 /Users/macbook/Sites/YiiRoot/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 /Users/macbook/Sites/YiiRoot/framework/web/CController.php(292): CFilterChain->run()
+#6 /Users/macbook/Sites/YiiRoot/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Users/macbook/Sites/YiiRoot/framework/web/CWebApplication.php(283): CController->run('admin')
+#8 /Users/macbook/Sites/YiiRoot/framework/web/CWebApplication.php(142): CWebApplication->runController('user/admin')
+#9 /Users/macbook/Sites/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#10 /Users/macbook/Sites/blog/index.php(23): CApplication->run()
+#11 {main}
+REQUEST_URI=/user/admin
+HTTP_REFERER=http://blog:8888/site/login
+---
+2012/11/05 17:59:05 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /Users/macbook/Sites/YiiRoot/framework/web/auth/CAccessControlFilter.php:170
+Stack trace:
+#0 /Users/macbook/Sites/YiiRoot/framework/web/auth/CAccessControlFilter.php(133): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /Users/macbook/Sites/YiiRoot/framework/web/filters/CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /Users/macbook/Sites/YiiRoot/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 /Users/macbook/Sites/YiiRoot/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 /Users/macbook/Sites/YiiRoot/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 /Users/macbook/Sites/YiiRoot/framework/web/CController.php(292): CFilterChain->run()
+#6 /Users/macbook/Sites/YiiRoot/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Users/macbook/Sites/YiiRoot/framework/web/CWebApplication.php(283): CController->run('admin')
+#8 /Users/macbook/Sites/YiiRoot/framework/web/CWebApplication.php(142): CWebApplication->runController('user/admin')
+#9 /Users/macbook/Sites/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#10 /Users/macbook/Sites/blog/index.php(23): CApplication->run()
+#11 {main}
+REQUEST_URI=/user/admin
+HTTP_REFERER=http://blog:8888/site/login
+---
+2012/11/06 00:15:59 [error] [exception.CException] exception 'CException' with message 'User and its behaviors do not have a method or closure named "search".' in /Users/macbook/Sites/YiiRoot/framework/base/CComponent.php:266
+Stack trace:
+#0 /Users/macbook/Sites/YiiRoot/framework/db/ar/CActiveRecord.php(226): CComponent->__call('search', Array)
+#1 /Users/macbook/Sites/blog/protected/views/user/admin.php(45): CActiveRecord->__call('search', Array)
+#2 /Users/macbook/Sites/blog/protected/views/user/admin.php(45): User->search()
+#3 /Users/macbook/Sites/YiiRoot/framework/web/CBaseController.php(127): require('/Users/macbook/...')
+#4 /Users/macbook/Sites/YiiRoot/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Users/macbook/...', Array, true)
+#5 /Users/macbook/Sites/YiiRoot/framework/web/CController.php(870): CBaseController->renderFile('/Users/macbook/...', Array, true)
+#6 /Users/macbook/Sites/YiiRoot/framework/web/CController.php(783): CController->renderPartial('admin', Array, true)
+#7 /Users/macbook/Sites/blog/protected/controllers/UserController.php(143): CController->render('admin', Array)
+#8 /Users/macbook/Sites/YiiRoot/framework/web/actions/CInlineAction.php(50): UserController->actionAdmin()
+#9 /Users/macbook/Sites/YiiRoot/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#10 /Users/macbook/Sites/YiiRoot/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#11 /Users/macbook/Sites/YiiRoot/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#12 /Users/macbook/Sites/YiiRoot/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#13 /Users/macbook/Sites/YiiRoot/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#14 /Users/macbook/Sites/YiiRoot/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#15 /Users/macbook/Sites/YiiRoot/framework/web/CController.php(292): CFilterChain->run()
+#16 /Users/macbook/Sites/YiiRoot/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /Users/macbook/Sites/YiiRoot/framework/web/CWebApplication.php(283): CController->run('admin')
+#18 /Users/macbook/Sites/YiiRoot/framework/web/CWebApplication.php(142): CWebApplication->runController('user/admin')
+#19 /Users/macbook/Sites/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#20 /Users/macbook/Sites/blog/index.php(23): CApplication->run()
+#21 {main}
+REQUEST_URI=/user/admin
+HTTP_REFERER=http://blog:8888/post/1/Welcome%21
+---
+2012/11/06 00:26:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /Users/macbook/Sites/blog/protected/controllers/PostController.php:183
+Stack trace:
+#0 /Users/macbook/Sites/blog/protected/controllers/PostController.php(82): PostController->loadModel()
+#1 /Users/macbook/Sites/YiiRoot/framework/web/actions/CInlineAction.php(50): PostController->actionUpdate()
+#2 /Users/macbook/Sites/YiiRoot/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#3 /Users/macbook/Sites/YiiRoot/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#4 /Users/macbook/Sites/YiiRoot/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#5 /Users/macbook/Sites/YiiRoot/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#6 /Users/macbook/Sites/YiiRoot/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#7 /Users/macbook/Sites/YiiRoot/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 /Users/macbook/Sites/YiiRoot/framework/web/CController.php(292): CFilterChain->run()
+#9 /Users/macbook/Sites/YiiRoot/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /Users/macbook/Sites/YiiRoot/framework/web/CWebApplication.php(283): CController->run('update')
+#11 /Users/macbook/Sites/YiiRoot/framework/web/CWebApplication.php(142): CWebApplication->runController('post/update')
+#12 /Users/macbook/Sites/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#13 /Users/macbook/Sites/blog/index.php(23): CApplication->run()
+#14 {main}
+REQUEST_URI=/post/update
+HTTP_REFERER=http://blog:8888/site/login
+---
+2012/11/09 19:51:53 [error] [exception.CException] exception 'CException' with message 'Property "User.login" is not defined.' in /Users/macbook/Sites/YiiRoot/framework/base/CComponent.php:131
+Stack trace:
+#0 /Users/macbook/Sites/YiiRoot/framework/db/ar/CActiveRecord.php(144): CComponent->__get('login')
+#1 /Users/macbook/Sites/YiiRoot/framework/validators/CUniqueValidator.php(82): CActiveRecord->__get('login')
+#2 /Users/macbook/Sites/YiiRoot/framework/validators/CValidator.php(214): CUniqueValidator->validateAttribute(Object(User), 'login')
+#3 /Users/macbook/Sites/YiiRoot/framework/base/CModel.php(158): CValidator->validate(Object(User), NULL)
+#4 /Users/macbook/Sites/YiiRoot/framework/db/ar/CActiveRecord.php(795): CModel->validate(NULL)
+#5 /Users/macbook/Sites/blog/protected/controllers/UserController.php(97): CActiveRecord->save()
+#6 [internal function]: UserController->actionUpdate('1')
+#7 /Users/macbook/Sites/YiiRoot/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(UserController), Array)
+#8 /Users/macbook/Sites/YiiRoot/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(UserController), Object(ReflectionMethod), Array)
+#9 /Users/macbook/Sites/YiiRoot/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#10 /Users/macbook/Sites/YiiRoot/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#11 /Users/macbook/Sites/YiiRoot/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#12 /Users/macbook/Sites/YiiRoot/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#13 /Users/macbook/Sites/YiiRoot/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#14 /Users/macbook/Sites/YiiRoot/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#15 /Users/macbook/Sites/YiiRoot/framework/web/CController.php(292): CFilterChain->run()
+#16 /Users/macbook/Sites/YiiRoot/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /Users/macbook/Sites/YiiRoot/framework/web/CWebApplication.php(283): CController->run('update')
+#18 /Users/macbook/Sites/YiiRoot/framework/web/CWebApplication.php(142): CWebApplication->runController('user/update')
+#19 /Users/macbook/Sites/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#20 /Users/macbook/Sites/blog/index.php(23): CApplication->run()
+#21 {main}
+REQUEST_URI=/user/update?id=1
+HTTP_REFERER=http://blog:8888/user/update?id=1
+---
+2012/11/09 19:53:31 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /Users/macbook/Sites/YiiRoot/framework/web/auth/CAccessControlFilter.php:170
+Stack trace:
+#0 /Users/macbook/Sites/YiiRoot/framework/web/auth/CAccessControlFilter.php(133): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /Users/macbook/Sites/YiiRoot/framework/web/filters/CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /Users/macbook/Sites/YiiRoot/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 /Users/macbook/Sites/YiiRoot/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 /Users/macbook/Sites/YiiRoot/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 /Users/macbook/Sites/YiiRoot/framework/web/CController.php(292): CFilterChain->run()
+#6 /Users/macbook/Sites/YiiRoot/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Users/macbook/Sites/YiiRoot/framework/web/CWebApplication.php(283): CController->run('admin')
+#8 /Users/macbook/Sites/YiiRoot/framework/web/CWebApplication.php(142): CWebApplication->runController('user/admin')
+#9 /Users/macbook/Sites/YiiRoot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#10 /Users/macbook/Sites/blog/index.php(23): CApplication->run()
+#11 {main}
+REQUEST_URI=/user/admin
+HTTP_REFERER=http://blog:8888/
+---
