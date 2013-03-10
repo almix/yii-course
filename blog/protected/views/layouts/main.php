@@ -44,8 +44,8 @@
 	<?php echo $content; ?>
 
 	<div id="footer">
-		Copyright &copy; <?php echo date('Y'); ?> by <a href="http://loco.ru/">Loco Studio</a>.<br/>
-		All Rights Reserved.<br/>
+		Copyright &copy; <?php echo date('Y'); ?>, Курс по разработке сайта на Yii с нуля <b>"Сайт на Yii? Легко!"</b><br />
+		автор – Александр Исаев (<a href="http://loco.ru/">Loco Studio</a>). All Rights Reserved.<br/>
 		<?php echo Yii::powered(); ?>
 	</div><!-- footer -->
 
