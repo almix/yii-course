@@ -1,0 +1,7 @@
+*.swp
+assets/*
+!assets/.gitignore
+protected/runtime/*
+!protected/runtime/.gitignore
+uploads/*
+!uploads/.gitignore
