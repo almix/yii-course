@@ -19,5 +19,19 @@ define('YII_ENABLE_ERROR_HANDLER', false);
 //define('YII_ENABLE_EXCEPTION_HANDLER', false);
 }
 require_once($yii);
-$app = Yii::createWebApplication($config);
+$app = Yii::createWebApplication($config); 
+
+// GZIP - сжатие / attaching a handler to application start 
+/*Yii::app()->onBeginRequest = function($event) 
+{
+		// starting output buffering with gzip handler 
+		return ob_start("ob_gzhandler");
+}; 
+// attaching a handler to application end 
+Yii::app()->onEndRequest = function($event) 
+{
+		// releasing output buffer 
+		return ob_end_flush();
+};*/
+
 $app->run();
