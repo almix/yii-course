@@ -45,6 +45,7 @@ class Comment extends CActiveRecord
 			array('author, email, url', 'length', 'max'=>128),
 			array('email','email'),
 			array('url','url'),
+			array('status','safe'),
 		);
 	}
 
@@ -75,16 +76,28 @@ class Comment extends CActiveRecord
 			'url' => 'Website',
 			'post_id' => 'Post',
 		);
-	}
-
+	}    
+	
 	/**
 	 * Approves a comment.
 	 */
 	public function approve()
 	{
 		$this->status=Comment::STATUS_APPROVED;
-		$this->update(array('status'));
-	}
+		$this->update(array('status')); 
+
+		//создаём экземпляр потомка CEvent
+		$event = new ApproveCommentEvent($this);
+		$event->comment = $this;
+		// вызываем событие
+		$this->onApproveComment($event);
+	} 
+
+	// описываем событие onApproveComment
+	public function onApproveComment($event) {
+		// Событие реально то пробуждается здесь, так как непосредственно вызывать событие принято в его описании. Так мы можем использовать метод onNewComment вместо raiseEvent
+		$this->raiseEvent('onApproveComment', $event);
+	}    
 
 	/**
 	 * @param Post the post that this comment belongs to. If null, the method

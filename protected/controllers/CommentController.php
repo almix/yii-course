@@ -105,6 +105,11 @@ class CommentController extends Controller
 		if(Yii::app()->request->isPostRequest)
 		{
 			$comment=$this->loadModel();
+			
+			$notifier = new Notifier();
+			// добавляем обработчик события
+			$comment->onApproveComment = array($notifier, 'comment'); // ф-ция comment из компонента Notifier
+			
 			$comment->approve();
 			$this->redirect(array('index'));
 		}

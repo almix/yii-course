@@ -29,6 +29,12 @@
 		<?php echo $form->labelEx($model,'content'); ?>
 		<?php echo $form->textArea($model,'content',array('rows'=>6, 'cols'=>50)); ?>
 		<?php echo $form->error($model,'content'); ?>
+	</div> 
+	
+	<div class="row">
+		<?php echo $form->labelEx($model,'status'); ?>
+		<?php echo $form->dropDownList($model,'status',Lookup::items('CommentStatus')); ?>
+		<?php echo $form->error($model,'status'); ?>
 	</div>
 
 	<div class="row buttons">
