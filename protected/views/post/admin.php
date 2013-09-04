@@ -29,3 +29,8 @@ $this->breadcrumbs=array(
 		),
 	),
 )); ?>
+<table>
+<tr>
+	<td style="text-align: right;">Записей на странице: <?php echo CHtml::dropDownList('',Yii::app()->session['postPageCount'] ? Yii::app()->session['postPageCount'] : 10,Yii::app()->params['selectPageCount'],array('onchange'=>"document.location.href='/" . Yii::app()->request->pathInfo . "?pageCount='+this.value;")); ?></td>
+</tr>
+</table>

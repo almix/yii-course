@@ -40,7 +40,15 @@ return array(
 		'errorHandler'=>array(
 			// use 'site/error' action to display errors
 			'errorAction'=>'site/error',
+		), 
+		
+		'session' => array(
+			'timeout' => 32400, // 9 часов
+			'class' => 'system.web.CDbHttpSession',
+			'connectionID' => 'db',
+			'sessionTableName' => 'yiico_session',
 		),
+		
 		'urlManager'=>array(
 			'urlFormat'=>'path',
 			'rules'=>array(

@@ -15,5 +15,14 @@ return array(
 	// whether post comments need to be approved before published
 	'commentNeedApproval'=>true,
 	// the copyright information displayed in the footer section
-	'copyrightInfo'=>'Copyright &copy; 2009 by My Company.',
+	'copyrightInfo'=>'Copyright &copy; 2009 by My Company.', 
+	'selectPageCount' => array(
+		'10' => '10',
+		'20' => '20',
+		'30' => '30',
+		'50' => '50',
+		'100' => '100',
+		'500' => '500',
+		'1000000' => 'Все',
+	),
 );

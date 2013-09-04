@@ -197,6 +197,9 @@ class Post extends CActiveRecord
 			'sort'=>array(
 				'defaultOrder'=>'status, update_time DESC',
 			),
+			'pagination'=>array(
+				'pageSize'=>(int)Yii::app()->session['postPageCount'] ? Yii::app()->session['postPageCount'] : 10,
+			),
 		));
 	}
 }

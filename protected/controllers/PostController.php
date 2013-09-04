@@ -141,6 +141,10 @@ class PostController extends Controller
 	 */
 	public function actionAdmin()
 	{
+		if (isset($_GET['pageCount'])) {
+            Yii::app()->session['postPageCount'] = $_GET['pageCount'];
+        }
+		
 		$model=new Post('search');
 		if(isset($_GET['Post']))
 			$model->attributes=$_GET['Post'];
