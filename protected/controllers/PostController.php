@@ -119,10 +119,14 @@ class PostController extends Controller
 		$criteria=new CDbCriteria(array(
 			'condition'=>'status='.Post::STATUS_PUBLISHED,
 			'order'=>'update_time DESC',
-			'with'=>'commentCount',
+			'with'=>array('commentCount', 'author'),
 		));
 		if(isset($_GET['tag']))
-			$criteria->addSearchCondition('tags',$_GET['tag']);
+			$criteria->addSearchCondition('tags',$_GET['tag']); 
+		if(isset($_GET['username']))
+			$criteria->addSearchCondition('username',$_GET['username']);
+        
+		$countAuthorPosts = Post::model()->count($criteria); // указывает сколько у автора материалов                 
 
 		$dataProvider=new CActiveDataProvider('Post', array(
 			'pagination'=>array(
@@ -133,6 +137,7 @@ class PostController extends Controller
 
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
+			'countAuthorPosts'=>$countAuthorPosts,
 		));
 	}
 

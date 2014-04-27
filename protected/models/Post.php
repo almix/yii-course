@@ -1,6 +1,6 @@
 <?php
 
-class Post extends CActiveRecord
+class Post extends YiicoActiveRecord
 {
 	/**
 	 * The followings are the available columns in table 'tbl_post':
@@ -94,6 +94,11 @@ class Post extends CActiveRecord
 			'id'=>$this->id,
 			'title'=>$this->title,
 		));
+	}     
+	
+	public function getAuthorLink()
+	{
+			return CHtml::link(CHtml::encode($this->author->username), array('post/index', 'username' => $this->author->username), $linkOptions=array('class'=>'author'));
 	}
 
 	/**
@@ -140,26 +145,6 @@ class Post extends CActiveRecord
 		$this->_oldTags=$this->tags;
 	}
 
-	/**
-	 * This is invoked before the record is saved.
-	 * @return boolean whether the record should be saved.
-	 */
-	protected function beforeSave()
-	{
-		if(parent::beforeSave())
-		{
-			if($this->isNewRecord)
-			{
-				$this->create_time=$this->update_time=time();
-				$this->author_id=Yii::app()->user->id;
-			}
-			else
-				$this->update_time=time();
-			return true;
-		}
-		else
-			return false;
-	}
 
 	/**
 	 * This is invoked after the record is saved.

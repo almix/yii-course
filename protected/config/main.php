@@ -29,7 +29,7 @@ return array(
 		),
 		
 		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=blog',
+			'connectionString' => 'mysql:host=localhost;dbname=yiico',
 			'emulatePrepare' => true,
 			'username' => 'root',
 			'password' => 'root',
@@ -53,7 +53,8 @@ return array(
 			'urlFormat'=>'path',
 			'rules'=>array(
 				'post/<id:\d+>/<title:.*?>'=>'post/view',
-				'posts/<tag:.*?>'=>'post/index',
+				'posts/<tag:.*?>'=>'post/index',  
+				'authors/<username:.*?>'=>'post/index',
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 			), 
 			'showScriptName'=>false,

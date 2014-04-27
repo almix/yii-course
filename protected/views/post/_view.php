@@ -3,7 +3,7 @@
 		<?php echo CHtml::link(CHtml::encode($data->title), $data->url); ?>
 	</div>
 	<div class="author">
-		posted by <?php echo $data->author->username . ' on ' . date('F j, Y',$data->create_time); ?>
+		автор: <?php echo $data->authorLink . ' on ' . date('F j, Y',$data->create_time); ?>
 	</div>
 	<div class="content">
 		<?php
