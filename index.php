@@ -5,7 +5,7 @@ header("Location: /",TRUE,301);
 exit();
 }
 
-if($_SERVER['HTTP_HOST']=='yiico:8888'){
+if($_SERVER['REMOTE_ADDR'] == "127.0.0.1"){
 defined('YII_DEBUG') or define('YII_DEBUG',true);
 $yii=dirname(__FILE__).'/../YiiRoot/framework/yii.php';
 $config=dirname(__FILE__).'/protected/config/local_main.php';
