@@ -135,10 +135,12 @@ class PostController extends Controller
 			'criteria'=>$criteria,
 		));
 
+		Yii::beginProfile('render_post_index', 'yiico');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 			'countAuthorPosts'=>$countAuthorPosts,
 		));
+		Yii::endProfile('render_post_index', 'yiico');
 	}
 
 	/**

@@ -9,6 +9,8 @@ $this->pageTitle=$model->title;
 	'data'=>$model,
 )); ?>
 
+<?//php VarDumper::dump($model); ?>
+
 <div id="comments">
 	<?php if($model->commentCount>=1): ?>
 		<h3>
